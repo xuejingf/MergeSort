@@ -1,40 +1,40 @@
-def ASSIGNMENT(new_list, i, old_list, j):
+def assignment(new_list, i, old_list, j):
     new_list[i] = old_list[j]
 
 
-def mergeSort(list_to_sort_by_merge):
-    if (
-        len(list_to_sort_by_merge) > 1
-        and not len(list_to_sort_by_merge) < 1
-        and len(list_to_sort_by_merge) != 0
-    ):
-        mid = len(list_to_sort_by_merge) // 2
-        left = list_to_sort_by_merge[:mid]
-        right = list_to_sort_by_merge[mid:]
+def merge_sort(list_to_sort):
+    if len(list_to_sort) > 1:
+        # Aufteilen der Liste in zwei Hälften
+        mid = len(list_to_sort) // 2
+        left = list_to_sort[:mid]
+        right = list_to_sort[mid:]
 
-        mergeSort(left)
-        mergeSort(right)
+        # Rekursiver Aufruf von mergeSort für die beiden Hälften
+        merge_sort(left)
+        merge_sort(right)
 
+        # Zusammenführen der sortierten Hälften
         l = 0
         r = 0
         i = 0
 
         while l < len(left) and r < len(right):
             if left[l] <= right[r]:
-                ASSIGNMENT(new_list=list_to_sort_by_merge, i=i, old_list=left, j=l)
+                # Verwendung der Funktion 'zuweisung' für die Zuweisung der Werte
+                assignment(list_to_sort, i, left, l)
                 l += 1
             else:
-                ASSIGNMENT(new_list=list_to_sort_by_merge, i=i, old_list=right, j=r)
+                assignment(list_to_sort, i, right, r)
                 r += 1
             i += 1
-
+        # Hinzufügen der übrig gebliebenen Elemente von linke_haelfte
         while l < len(left):
-            list_to_sort_by_merge[i] = left[l]
+            list_to_sort[i] = left[l]
             l += 1
             i += 1
-
+        # Hinzufügen der übrig gebliebenen Elemente von rechte_haelfte
         while r < len(right):
-            list_to_sort_by_merge[i] = right[r]
+            list_to_sort[i] = right[r]
             r += 1
             i += 1
 
@@ -45,7 +45,11 @@ my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 x = range(len(my_list))
 plt.plot(x, my_list)
 plt.show()
-mergeSort(my_list)
+
+
+# Aufruf von mergeSort, um die Liste zu sortieren
+merge_sort(my_list)
+
 x = range(len(my_list))
 plt.plot(x, my_list)
 plt.show()
