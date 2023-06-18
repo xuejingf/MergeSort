@@ -8,6 +8,7 @@ def plot_list(list_to_plot):
     plt.show(block=False)
     plt.pause(5)
     plt.clf() # Das aktuelle Bild löschen
+    # uzegcuzegcu
 
 def merge_sort(list_to_sort):
     if len(list_to_sort) > 1:
