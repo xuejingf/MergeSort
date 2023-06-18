@@ -1,6 +1,13 @@
 def assignment(new_list, i, old_list, j):
     new_list[i] = old_list[j]
 
+import matplotlib.pyplot as plt
+
+def plot_list(list_to_plot):
+    plt.bar(range(len(list_to_plot)), list_to_plot)
+    plt.show(block=False)
+    plt.pause(5)
+    plt.clf() # Das aktuelle Bild löschen
 
 def merge_sort(list_to_sort):
     if len(list_to_sort) > 1:
@@ -37,9 +44,7 @@ def merge_sort(list_to_sort):
             list_to_sort[i] = right[r]
             r += 1
             i += 1
-
-
-import matplotlib.pyplot as plt
+    
 
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 x = range(len(my_list))
