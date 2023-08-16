@@ -2,15 +2,7 @@ def ASSIGNMENT(new_list, i, old_list, j):
     new_list[i] = old_list[j]
 
 
-def mergeSort(list_to_sort_by_merge):
-    if (
-        len(list_to_sort_by_merge) > 1
-        and not len(list_to_sort_by_merge) < 1
-        and len(list_to_sort_by_merge) != 0
-    ):
-        mid = len(list_to_sort_by_merge) // 2
-        left = list_to_sort_by_merge[:mid]
-        right = list_to_sort_by_merge[mid:]
+t_to_sort_by_merge[mid:]
 
         mergeSort(left)
         mergeSort(right)
